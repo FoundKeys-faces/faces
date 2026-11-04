@@ -17,10 +17,31 @@ GAMMA = 1.35      # deepens the mid-tones like the example
 CLIP = 0.5        # % of darkest/lightest pixels clipped when stretching contrast
 
 
+FACE_TARGET = 135  # dark photos are lifted until the face area averages at least this
+MAX_LIFT = 0.5     # strongest brightening allowed (gamma)
+
+
+def face_lift(a):
+    """Gamma (<=1) that brightens a dark photo's face area (upper middle) to FACE_TARGET."""
+    h, w = a.shape
+    face = a[int(h * 0.25):int(h * 0.625), int(w * 0.31):int(w * 0.69)] / 255.0
+    if face.mean() * 255 >= FACE_TARGET:
+        return 1.0
+    lo, hi = MAX_LIFT, 1.0
+    for _ in range(30):
+        mid = (lo + hi) / 2
+        if (face ** mid).mean() * 255 < FACE_TARGET:
+            hi = mid
+        else:
+            lo = mid
+    return hi
+
+
 def navy(im):
     g = ImageOps.autocontrast(im.convert("L"), cutoff=CLIP)
+    lift = face_lift(np.asarray(g).astype(float))
     x = np.arange(256) / 255.0
-    tone = np.clip((x ** GAMMA) * 255.0, 0, 255)
+    tone = np.clip(((x ** lift) ** GAMMA) * 255.0, 0, 255)
     lv = [r[0] for r in RAMP]
     lut = [np.interp(tone, lv, [r[c] for r in RAMP]) for c in (1, 2, 3)]
     a = np.asarray(g)
