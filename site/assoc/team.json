@@ -1,0 +1,35 @@
+{
+ "updated": "2026-11-04",
+ "team": [
+  {
+   "name": "David Johnstone",
+   "title": "Founder",
+   "photo": "https://raw.githubusercontent.com/FoundKeys-faces/faces/main/site/assoc/team/david.png"
+  },
+  {
+   "name": "Rachel Collison",
+   "title": "Associate",
+   "photo": "https://raw.githubusercontent.com/FoundKeys-faces/faces/main/site/assoc/team/rachel.png"
+  },
+  {
+   "name": "Will Rockall",
+   "title": "Operations Director",
+   "photo": "https://raw.githubusercontent.com/FoundKeys-faces/faces/main/site/assoc/team/will.png"
+  },
+  {
+   "name": "Hayley Rivers-Hambach",
+   "title": "Associate",
+   "photo": ""
+  },
+  {
+   "name": "JJ Greig",
+   "title": "Associate",
+   "photo": ""
+  },
+  {
+   "name": "Brook Neale",
+   "title": "Associate",
+   "photo": ""
+  }
+ ]
+}
