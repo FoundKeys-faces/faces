@@ -1,11 +1,17 @@
 {
-  "updated": "2026-11-04 10:22",
+  "updated": "2026-11-11 09:22",
   "team": [
     {
       "name": "David Johnstone",
       "title": "Founder",
       "photo": "https://raw.githubusercontent.com/FoundKeys-faces/faces/main/site/assoc/team/david-johnstone.png",
       "photoId": "85b26fee8eee0db2eacb7b8ae5887efb"
+    },
+    {
+      "name": "Will Rockall",
+      "title": "Operations Director",
+      "photo": "https://raw.githubusercontent.com/FoundKeys-faces/faces/main/site/assoc/team/will-rockall.png",
+      "photoId": "8a75d2b48bd73236e95d41d365754bd7"
     },
     {
       "name": "JJ Greig",
@@ -24,12 +30,6 @@
       "title": "Associate",
       "photo": "https://raw.githubusercontent.com/FoundKeys-faces/faces/main/site/assoc/team/hayley-rivers-hambach.png",
       "photoId": "5f0c4f8c1ddefa02797aabd03e3e56d1"
-    },
-    {
-      "name": "Will Rockall",
-      "title": "Operations Director",
-      "photo": "https://raw.githubusercontent.com/FoundKeys-faces/faces/main/site/assoc/team/will-rockall.png",
-      "photoId": "8a75d2b48bd73236e95d41d365754bd7"
     },
     {
       "name": "Brook Neale",
