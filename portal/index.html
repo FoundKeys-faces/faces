@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FoundKeys Portal</title>
+<meta name="apple-mobile-web-app-title" content="FoundKeys">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" href="favicon-32.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0C2052">
+<style>body{margin:0;background:#0C2052;color:#fff;font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;display:flex;min-height:100vh;align-items:center;justify-content:center;text-align:center;padding:24px;box-sizing:border-box}img{width:96px;height:96px;border-radius:22px}a{color:#fff;font-weight:600}.s{margin-top:22px;font-size:15px;opacity:.85;line-height:1.5}</style>
+</head><body><div>
+<img src="icon-192.png" alt="FoundKeys">
+<p style="font-size:20px;font-weight:600;margin:18px 0 0">FoundKeys Associate Portal</p>
+<p class="s" id="msg">Opening the portal…</p>
+<p class="s" id="tip" hidden>To keep this on your phone: tap <b>Share</b>, then <b>Add to Home Screen</b>.<br><a href="https://claude.ai/artifact/JqEHYSYj7k4HusukHTrWFG">Open the portal</a></p>
+</div>
+<script>
+var P='https://claude.ai/artifact/JqEHYSYj7k4HusukHTrWFG';
+var setup=/[?&]setup/.test(location.search);
+if(setup){ document.getElementById('msg').hidden=true; document.getElementById('tip').hidden=false; }
+else { setTimeout(function(){ location.replace(P); },300); }
+</script>
+</body></html>
