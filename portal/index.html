@@ -15,9 +15,10 @@
 <p class="s" id="tip" hidden>To keep this on your phone: tap <b>Share</b>, then <b>Add to Home Screen</b>.<br><a href="https://claude.ai/artifact/JqEHYSYj7k4HusukHTrWFG">Open the portal</a></p>
 </div>
 <script>
-var P='https://claude.ai/artifact/JqEHYSYj7k4HusukHTrWFG';
-var setup=/[?&]setup/.test(location.search);
-if(setup){ document.getElementById('msg').hidden=true; document.getElementById('tip').hidden=false; try{ history.replaceState(null,'',location.pathname); }catch(e){} }
-else { setTimeout(function(){ location.replace(P); },300); }
+var P='https://claude.ai/artifact/JqEHYSYj7k4HusukHTrWFG', seen=false;
+try{ seen=localStorage.getItem('fk_portal_seen')==='1'; }catch(e){}
+try{ history.replaceState(null,'',location.pathname); }catch(e){}
+if(!seen){ document.getElementById('msg').hidden=true; document.getElementById('tip').hidden=false; try{ localStorage.setItem('fk_portal_seen','1'); }catch(e){} }
+else { location.replace(P); }
 </script>
 </body></html>
