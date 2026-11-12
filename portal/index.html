@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>FoundKeys Portal</title>
-<meta name="apple-mobile-web-app-title" content="FoundKeys"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="FoundKeys">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" href="favicon-32.png">
 <link rel="manifest" href="manifest.json">
@@ -12,12 +12,12 @@
 <img src="icon-192.png" alt="FoundKeys">
 <p style="font-size:20px;font-weight:600;margin:18px 0 0">FoundKeys Associate Portal</p>
 <p class="s" id="msg">Opening the portal…</p>
-<p class="s" id="tip" hidden>Stay on this page and tap <b>Share</b>, then <b>Add to Home Screen</b>, then <b>Add</b>. The FoundKeys icon will then open the portal.<br><a href="https://claude.ai/artifact/JqEHYSYj7k4HusukHTrWFG">Open the portal</a></p>
+<p class="s" id="tip" hidden>Tap <b>Share</b>, then <b>Add to Home Screen</b>. Switch <b>Open as Web App</b> off, then tap <b>Add</b>. The FoundKeys icon will open the portal in Safari, where you&#39;re already signed in.<br><a href="https://claude.ai/artifact/JqEHYSYj7k4HusukHTrWFG">Open the portal</a></p>
 </div>
 <script>
 var P='https://claude.ai/artifact/JqEHYSYj7k4HusukHTrWFG';
-var fromHome=(window.navigator.standalone===true)||(window.matchMedia&&window.matchMedia('(display-mode: standalone)').matches);
-if(fromHome){ location.replace(P); }
-else { document.getElementById('msg').hidden=true; document.getElementById('tip').hidden=false; }
+var setup=/[?&]setup/.test(location.search);
+if(setup){ document.getElementById('msg').hidden=true; document.getElementById('tip').hidden=false; try{ history.replaceState(null,'',location.pathname); }catch(e){} }
+else { location.replace(P); }
 </script>
 </body></html>
